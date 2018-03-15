@@ -27,6 +27,13 @@ public class LoginController {
 		return modelAndView;
 	}
 
+    @RequestMapping(value="/dusra", method = RequestMethod.GET)
+    public ModelAndView dusra(){
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("home");
+        return modelAndView;
+    }
+
     @RequestMapping(value="/", method = RequestMethod.GET)
     public ModelAndView index(){
         ModelAndView modelAndView = new ModelAndView();
