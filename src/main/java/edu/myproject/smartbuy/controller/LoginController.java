@@ -20,6 +20,7 @@ public class LoginController {
 	@Autowired
 	private UserService userService;
 
+
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public ModelAndView login(){
 		ModelAndView modelAndView = new ModelAndView();
@@ -27,12 +28,6 @@ public class LoginController {
 		return modelAndView;
 	}
 
-    @RequestMapping(value="/dusra", method = RequestMethod.GET)
-    public ModelAndView dusra(){
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("home");
-        return modelAndView;
-    }
 
     @RequestMapping(value="/", method = RequestMethod.GET)
     public ModelAndView index(){
@@ -82,6 +77,4 @@ public class LoginController {
 		modelAndView.setViewName("admin/home");
 		return modelAndView;
 	}
-	
-
 }
