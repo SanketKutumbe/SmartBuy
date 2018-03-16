@@ -22,7 +22,7 @@ public class TestCode {
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("x@y.com");
         WebElement pwd = driver.findElement(By.id("password"));
-        pwd.sendKeys("fwdhfuw");
+        pwd.sendKeys("qwerty");
         driver.findElement(By.name("Submit")).click();
         actualTitle = driver.getTitle();
         if (actualTitle.contentEquals(expectedTitle)){
