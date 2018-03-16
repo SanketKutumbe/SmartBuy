@@ -9,7 +9,7 @@ public class TestCode {
 
     public void test() {
 
-        System.setProperty("webdriver.chrome.driver","/SmartBuy/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/home/surya/IdeaProjects/chromedriverr");
         WebDriver driver = new ChromeDriver();
 
         String baseUrl = "http://localhost:8081/login";
