@@ -1,18 +1,20 @@
-package edu.myproject.smartbuy.service;
+package edu.myproject.smartbuy.service.Impl;
 
 import edu.myproject.smartbuy.model.Role;
 import edu.myproject.smartbuy.model.User;
 import edu.myproject.smartbuy.repository.RoleRepository;
 import edu.myproject.smartbuy.repository.UserRepository;
+import edu.myproject.smartbuy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.HashSet;
 
-@Service("userService")
-public class UserServiceImpl implements UserService{
+@Service
+public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserRepository userRepository;

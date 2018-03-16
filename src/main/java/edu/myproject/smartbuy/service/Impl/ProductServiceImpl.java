@@ -1,11 +1,14 @@
-package edu.myproject.smartbuy.service;
+package edu.myproject.smartbuy.service.Impl;
 
 import edu.myproject.smartbuy.model.Product;
 import edu.myproject.smartbuy.repository.ProductRepository;
+import edu.myproject.smartbuy.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired

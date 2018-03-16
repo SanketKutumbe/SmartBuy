@@ -1,4 +1,8 @@
 package edu.myproject.smartbuy.repository;
 
-public class ProductRepository {
+import edu.myproject.smartbuy.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+
 }

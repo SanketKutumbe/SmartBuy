@@ -1,15 +1,24 @@
-package edu.myproject.smartbuy.service;
+package edu.myproject.smartbuy.service.Impl;
 
 import edu.myproject.smartbuy.model.Product;
 import edu.myproject.smartbuy.repository.ProductRepository;
+import edu.myproject.smartbuy.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.context.WebApplicationContext;
 
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ShoppingCartServiceImpl implements ShoppingCartService{
+@Service
+@Scope(value = WebApplicationContext.SCOPE_SESSION, proxyMode = ScopedProxyMode.TARGET_CLASS)
+@Transactional
+public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Autowired
     private ProductRepository productRepository;
