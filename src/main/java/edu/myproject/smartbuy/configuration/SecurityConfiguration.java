@@ -48,6 +48,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.
 			authorizeRequests()
 				.antMatchers("/").permitAll()
+                .antMatchers("/home").permitAll()
                 .antMatchers("/login").permitAll()
 				.antMatchers("/registration").permitAll()
 				.antMatchers("/afterlogin").permitAll()
@@ -58,8 +59,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 				.usernameParameter("email")
 				.passwordParameter("password")
 				.and().logout()
+                .logoutUrl("/home")
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/").and().exceptionHandling()
+				.logoutSuccessUrl("/home?logout").and().exceptionHandling()
 				.accessDeniedPage("/access-denied");
 	}
 	

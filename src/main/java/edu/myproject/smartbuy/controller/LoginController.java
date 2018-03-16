@@ -1,7 +1,9 @@
 package edu.myproject.smartbuy.controller;
 
 
+import edu.myproject.smartbuy.model.Product;
 import edu.myproject.smartbuy.model.User;
+import edu.myproject.smartbuy.repository.ProductRepository;
 import edu.myproject.smartbuy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -13,12 +15,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class LoginController {
 	
 	@Autowired
 	private UserService userService;
+
+    @Autowired
+    private ProductRepository productRepository;
 
 
 	@RequestMapping(value="/login", method = RequestMethod.GET)
@@ -29,14 +35,15 @@ public class LoginController {
 	}
 
 
-    @RequestMapping(value="/", method = RequestMethod.GET)
-    public ModelAndView index(){
+    @RequestMapping(value={"/","/home"}, method = RequestMethod.GET)
+    public ModelAndView home(){
+        List<Product> products = productRepository.findAll();
         ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("products", products);
         modelAndView.setViewName("index");
         return modelAndView;
     }
-	
-	
+
 	@RequestMapping(value="/registration", method = RequestMethod.GET)
 	public ModelAndView registration(){
 		ModelAndView modelAndView = new ModelAndView();
@@ -68,7 +75,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/admin/home", method = RequestMethod.GET)
-	public ModelAndView home(){
+	public ModelAndView userHome(){
 		ModelAndView modelAndView = new ModelAndView();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.findUserByEmail(auth.getName());

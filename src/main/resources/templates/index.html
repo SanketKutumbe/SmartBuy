@@ -10,44 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
-    <script>
-        jquery(function(){
-            jquery("#header").load("header.html");
-            jquery("#first").load("two_wheeler_gear.html");
-            jquery("#second").load("two_wheeler_without_gear.html");
-            jquery("#third").load("four_wheeler.jsp");
-        });
-    </script>
-
 </head>
 <body>
     <header th:replace = "header :: header"></header>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">WebSiteName</a>
-            </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
+    <div th:if="${param.logout}">
+        <div class="alert alert-info">
+            You have been logged out.
         </div>
-    </nav>
-    <div th:replace = "two_wheeler_gear :: header"></div>
-
-    <!--<jsp:include page="two_wheeler_gear.jsp"/>-->
-    <!--<jsp:include page="two_wheeler_without_gear.jsp"/>-->
-    <!--<jsp:include page="four_wheeler.jsp"/>-->
-
-    <!--<div id = "second"></div>-->
-    <!--<div id = "third"></div>-->
+    </div>
+    <!--<div th:replace = "two_wheeler_gear :: header"></div>-->
 </body>
 
 </html>

@@ -32,4 +32,6 @@ public class HomeController {
         modelAndView.setViewName("admin/afterlogin");
         return modelAndView;
     }
+
+
 }
