@@ -23,7 +23,7 @@
 			<h3 class="form-signin-heading" th:text="Welcome"></h3>
 			<br/>
 			 
-			<input id="email" type="text"  name="email"  th:placeholder="Email" class="form-control" /> <br/>
+			<input id="email" type="email"  name="email"  th:placeholder="Email" class="form-control" /> <br/>
 			<input id="password" type="password" name="password" th:placeholder="Password"  class="form-control" /> <br />
 				
 			<div align="center" th:if="${param.error}">
@@ -34,7 +34,7 @@
 
         </form>
 	</div>
-	<section class="container">
+	<!--section class="container">
 		<div class="row white">
 			<div class="block">
 
@@ -68,7 +68,7 @@
 
 			</div><!-- /block -->
 		</div><!-- /row -->
-	</section>
+	<--/section>
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
