@@ -68,8 +68,7 @@ public class LoginController {
 			userService.saveUser(user);
 			modelAndView.addObject("successMessage", "User has been registered successfully");
 			modelAndView.addObject("user", new User());
-			modelAndView.setViewName("registration");
-			
+			modelAndView.setViewName("login");
 		}
 		return modelAndView;
 	}
@@ -81,7 +80,7 @@ public class LoginController {
 		User user = userService.findUserByEmail(auth.getName());
 		modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
 		modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
-		modelAndView.setViewName("admin/home");
+		modelAndView.setViewName("afterlogin");
 		return modelAndView;
 	}
 }
