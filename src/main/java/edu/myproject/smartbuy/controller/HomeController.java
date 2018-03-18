@@ -24,14 +24,31 @@ public class HomeController {
     @Autowired
     private ProductRepository productRepository;
 
-    @RequestMapping(value="/admin/afterlogin", method = RequestMethod.GET)
-    public ModelAndView afterlogin(){
-        List<Product> products = productRepository.findAll();
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value="/admin/home", method = RequestMethod.GET)
+    public ModelAndView userHome(){
         ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByEmail(auth.getName());
+        List<Product> products = productRepository.findAll();
         modelAndView.addObject("products", products);
-        modelAndView.setViewName("admin/afterlogin");
+//        modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
+        modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName());
+//        modelAndView.addObject("adminMessage","Content Available Only for Users with Admin Role");
+        modelAndView.setViewName("admin/home");
         return modelAndView;
     }
+
+//    @RequestMapping(value="/admin/home", method = RequestMethod.GET)
+//    public ModelAndView afterlogin(){
+//        List<Product> products = productRepository.findAll();
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("products", products);
+//        modelAndView.setViewName("admin/home");
+//        return modelAndView;
+//    }
 
 
 }

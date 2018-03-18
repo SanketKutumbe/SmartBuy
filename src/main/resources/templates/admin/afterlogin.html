@@ -1,11 +1,44 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
     <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css}" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 </head>
 <body>
+<div class="container">
+    <section class="container">
+        <div class="row white" th:fragment="header">
+            <div class="block">
+                <div class="col-xs-12 col-sm-6 col-md-3" th:each="product : ${products}">
+                    <ul class="pricing p-green">
+                        <li>
+                            <big><div th:text="${product.category}">Description</div></big>
+                        </li>
+                        <li><big>Rs. 200/hour</big></li>
+                        <li>
+                            <div class="form-group">
+                                <label for="two_wg_hours" class="sr-only">Hours</label>
+                                <input type="text" class="form-control" id="two_wg_hours" placeholder="enter number of hours">
+                            </div>
+                        </li>
+                        <li>
+                            <big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>
+                        </li>
+                        <li>
+                            <a th:href="@{'/shoppingCart/addProduct/{id}'(id=${product.id})}" class="col-md-1" sec:authorize="isAuthenticated()">
+                                <button type="button" class="btn btn-primary" th:text="Hire">Hire</button>
+                            </a>
+                        </li>
 
+                    </ul>
+                </div>
+            </div><
+        </div>
+    </section>
+</div>
 </body>
 </html>

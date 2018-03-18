@@ -6,9 +6,20 @@
     <!--<link rel="stylesheet" href="css/homecards.css">-->
     <!--<script src="js/jquery.min.js"></script>-->
 
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css}" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
+    <style>
+        body {
+            background: whitesmoke;
+        }
+    </style>
 
 </head>
 <body>
@@ -18,7 +29,8 @@
             You have been logged out.
         </div>
     </div>
-    <!--<div th:replace = "two_wheeler_gear :: header"></div>-->
+    <div th:replace = "afterlogin :: header"></div>
+
 </body>
 
 </html>
