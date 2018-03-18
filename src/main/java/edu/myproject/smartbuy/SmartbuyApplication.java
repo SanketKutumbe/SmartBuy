@@ -9,5 +9,7 @@ public class SmartbuyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmartbuyApplication.class, args);
+//		TestCode obj= new TestCode();
+//		obj.test();
 	}
 }
