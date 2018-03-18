@@ -15,11 +15,11 @@ import static org.testng.Assert.*;
 public class SmartbuyApplicationTest {
 
     private WebDriver driver;
-    String appURL = "http://localhost:8082/login";
+    String appURL = "http://localhost:8081/login";
 
     @BeforeMethod
     public void setUp() throws Exception {
-        driver = new FirefoxDriver()Driver();
+        driver = new FirefoxDriver();
     }
 
     @Test
