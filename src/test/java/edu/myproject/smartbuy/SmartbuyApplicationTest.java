@@ -23,7 +23,7 @@ public class SmartbuyApplicationTest {
     }
 
     @Test
-    public void verifyLogin() {
+    public void testingMethod() {
         driver.navigate().to(appURL);
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("kutumbe.sanket@gmail.com");
