@@ -34,7 +34,9 @@ public class ShoppingCartController {
 
     @GetMapping("/shoppingCart/removeProduct/{productId}")
     public ModelAndView removeProductFromCart(@PathVariable("productId") Integer productId) {
+        System.out.println(shoppingCartService.getProductsInCart().size());
         shoppingCartService.removeProduct(productService.findById(productId));
+        System.out.println(shoppingCartService.getProductsInCart().size());
         return shoppingCart();
     }
 

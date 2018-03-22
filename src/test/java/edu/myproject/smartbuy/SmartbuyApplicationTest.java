@@ -23,12 +23,12 @@ public class SmartbuyApplicationTest {
     }
 
     @Test
-    public void verifyLogin() {
+    public void testingMethod() {
         driver.navigate().to(appURL);
         WebElement email = driver.findElement(By.id("email"));
-        email.sendKeys("x@y.com");
+        email.sendKeys("kutumbe.sanket@gmail.com");
         WebElement pwd = driver.findElement(By.id("password"));
-        pwd.sendKeys("qwerty");
+        pwd.sendKeys("cdef3456");
         driver.findElement(By.name("Submit")).click();
         String getTitle = driver.getTitle();
         Assert.assertEquals(getTitle, "Smart Buy");

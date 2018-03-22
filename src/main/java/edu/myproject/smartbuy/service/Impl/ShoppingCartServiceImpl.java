@@ -13,6 +13,7 @@ import org.springframework.web.context.WebApplicationContext;
 import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 @Service
@@ -33,11 +34,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      */
     @Override
     public void addProduct(Product product) {
-        if (products.containsKey(product)) {
-            products.replace(product, products.get(product) + 1);
-        } else {
-            products.put(product, 1);
-        }
+        products.put(product,1);
     }
 
     /**
@@ -48,11 +45,13 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      */
     @Override
     public void removeProduct(Product product) {
-        if (products.containsKey(product)) {
-            if (products.get(product) > 1)
-                products.replace(product, products.get(product) - 1);
-            else if (products.get(product) == 1) {
-                products.remove(product);
+        Iterator<Product> iterator = products.keySet().iterator();
+        while( iterator.hasNext() )
+        {
+            Product p = iterator.next();
+            if( p.getId() == product.getId() )
+            {
+                products.remove(p);
             }
         }
     }
@@ -71,7 +70,6 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         for (Map.Entry<Product, Integer> entry : products.entrySet()) {
             // Refresh quantity for every product before checking
             product = productRepository.findOne(entry.getKey().getId());
-
         }
         productRepository.save(products.keySet());
         productRepository.flush();
@@ -82,9 +80,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public Double getTotal() {
 
         Double total = 0.0;
-//        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
-//            total = total.add(entry.getKey().getPrice().multiply(new Double(entry.getValue())));
-//        }
+        for (Map.Entry<Product, Integer> entry : products.entrySet()) {
+            total += entry.getKey().getCharge();
+        }
         return total;
     }
 }
