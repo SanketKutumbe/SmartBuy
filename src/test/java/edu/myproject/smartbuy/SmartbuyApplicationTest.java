@@ -32,6 +32,8 @@ public class SmartbuyApplicationTest {
         driver.findElement(By.name("Submit")).click();
         String getTitle = driver.getTitle();
         Assert.assertEquals(getTitle, "Smart Buy");
+        String getUrl= driver.getCurrentUrl();
+        Assert.assertEquals(getUrl,"http://localhost:8082/admin/home");
     }
 
     @AfterMethod
