@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 </head>
 <body>
-<div class="container">
+<div class="container"  th:fragment="header">
     <section class="container">
-        <div class="row white" th:fragment="header">
+        <div class="row white">
             <div class="block">
                 <div class="col-xs-12 col-sm-6 col-md-3" th:each="product : ${products}">
                     <ul class="pricing p-green">
@@ -30,14 +30,13 @@
                         </li>
                         <li>
                             <a th:href="@{'/shoppingCart/addProduct/{id}'(id=${product.id})}" class="col-md-1" sec:authorize="isAuthenticated()">
-                                <button type="button" class="btn btn-primary" name = "Hire"
-                                        >Hire</button>
+                                <button type="button" class="btn btn-primary" name = "Hire">Hire</button>
                             </a>
                         </li>
 
                     </ul>
                 </div>
-            </div><
+            </div>
         </div>
     </section>
 </div>
