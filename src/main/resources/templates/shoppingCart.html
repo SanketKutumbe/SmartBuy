@@ -25,7 +25,7 @@
         <div class="row panel-body">
             <div th:inline="text" class="col-md-2">Price: [[${product.getKey().charge}]] $</div>
             <a th:href="@{'/shoppingCart/removeProduct/{id}'(id=${product.getKey().id})}" class="col-md-1">
-                <button type="button" class="btn btn-primary" th:text="Remove">Remove</button>
+                <button type="button" class="btn btn-primary" name="Remove" th:text="Remove">Remove</button>
             </a>
         </div>
         <br></br>
@@ -34,7 +34,7 @@
     <div class="row panel-body">
         <h2 class="col-md-11" th:inline="text">Total: [[${total}]]Rs</h2>
         <a th:href="@{'/shoppingCart/checkout'}" class="col-md-1">
-            <button type="button" class="btn btn-danger" th:text="Checkout">Checkout</button>
+            <button type="button" class="btn btn-danger" name = "Checkout" th:text="Checkout">Checkout</button>
         </a>
     </div>
 

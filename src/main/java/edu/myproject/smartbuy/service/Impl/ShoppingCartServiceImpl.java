@@ -45,15 +45,16 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
      */
     @Override
     public void removeProduct(Product product) {
-        Iterator<Product> iterator = products.keySet().iterator();
-        while( iterator.hasNext() )
-        {
-            Product p = iterator.next();
-            if( p.getId() == product.getId() )
-            {
-                products.remove(p);
-            }
-        }
+//        Iterator<Product> iterator = products.keySet().iterator();
+//        while( iterator.hasNext() )
+//        {
+//            Product p = iterator.next();
+//            if( p.getId() == product.getId() )
+//            {
+//                products.remove(p);
+//            }
+//        }
+        products.remove(product);
     }
 
     /**

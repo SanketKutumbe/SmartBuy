@@ -23,7 +23,7 @@ public class SmartbuyApplicationTest {
     }
 
     @Test
-    public void testingMethod() {
+    public void testingMethod() throws InterruptedException {
         driver.navigate().to(appURL);
         WebElement email = driver.findElement(By.id("email"));
         email.sendKeys("kutumbe.sanket@gmail.com");
@@ -32,6 +32,15 @@ public class SmartbuyApplicationTest {
         driver.findElement(By.name("Submit")).click();
         String getTitle = driver.getTitle();
         Assert.assertEquals(getTitle, "Smart Buy");
+        driver.findElement(By.name("Hire")).click();
+        Thread.sleep(2000);
+//        driver.findElement(By.name("Remove")).click();
+//        Thread.sleep(5000);
+//        driver.findElement(By.linkText("Home")).click();
+//        Thread.sleep(2000);
+//        driver.findElement(By.name("Hire")).click();
+//        Thread.sleep(5000);
+
     }
 
     @AfterMethod
