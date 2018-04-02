@@ -11,8 +11,13 @@ Configuration Steps:
 From now, all the steps are related to Project config:
 
 1] In SCM, Git--->(Add credentials)
+
 (Not needed)  2] In Build Triggers, Poll SCM--->schedule--->*****
+
 (Not needed)  3] In Build Environment, Start Xvfb before build... (check box)
+
 (Not needed)  4] In Pre-steps, in goal, add "clean verify"
+
 5] In Build, under pom.xml, in goals and options, add "clean package" (No need to add "clean test")
+
 6] In Post-build Actions, add "Publish TestNG Results"---> TestNG XML report pattern, add "**/testng-results.xml"
