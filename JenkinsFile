@@ -19,14 +19,6 @@ pipeline
                 withMaven(maven : 'Maven3.5.2') { sh 'mvn test' }
             }
         }
-
-        stage('Deployment Stage')
-        {
-            steps
-            {
-                withMaven(maven : 'Maven3.5.2') { sh 'mvn deploy' }
-            }
-        }
     }
 
 }
