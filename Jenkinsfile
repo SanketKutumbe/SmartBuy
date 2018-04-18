@@ -12,11 +12,14 @@ pipeline
             }
         }
 
-       stage(‘Build’) {
-
-            sh ‘docker-compose up elk’
-    
+        stage('Testing Stage')
+        {
+            steps
+            {
+                withMaven(maven : 'Maven3.5.2') { sh 'mvn test' }
+            }
         }
     }
 
 }
+
