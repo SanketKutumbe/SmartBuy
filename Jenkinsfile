@@ -1,6 +1,6 @@
 pipeline
 {
-    agent any
+    agent { docker 'maven:3-alpine' }
 
     stages
     {
@@ -8,7 +8,7 @@ pipeline
         {
             steps
             {
-                withMaven(maven : 'Maven3.5.2') { sh 'mvn clean verify' }
+                withMaven(maven : 'Maven3.5.2') { sh 'mvn clean package -DskipTests' }
             }
         }
 
@@ -19,14 +19,7 @@ pipeline
                 withMaven(maven : 'Maven3.5.2') { sh 'mvn test' }
             }
         }
-
-        stage('Deployment Stage')
-        {
-            steps
-            {
-                withMaven(maven : 'Maven3.5.2') { sh 'mvn deploy' }
-            }
-        }
     }
 
 }
+
