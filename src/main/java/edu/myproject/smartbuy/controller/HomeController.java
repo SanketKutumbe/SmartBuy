@@ -33,6 +33,7 @@ public class HomeController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByEmail(auth.getName());
         List<Product> products = productRepository.findAll();
+
         modelAndView.addObject("products", products);
 //        modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName() + " (" + user.getEmail() + ")");
         modelAndView.addObject("userName", "Welcome " + user.getName() + " " + user.getLastName());
@@ -40,15 +41,4 @@ public class HomeController {
         modelAndView.setViewName("admin/home");
         return modelAndView;
     }
-
-//    @RequestMapping(value="/admin/home", method = RequestMethod.GET)
-//    public ModelAndView afterlogin(){
-//        List<Product> products = productRepository.findAll();
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.addObject("products", products);
-//        modelAndView.setViewName("admin/home");
-//        return modelAndView;
-//    }
-
-
 }
