@@ -16,7 +16,6 @@ public class SmartbuyApplicationTest {
 
     private WebDriver driver;
     String appURL = "http://172.17.0.3:8082/login";
-
     @BeforeMethod
     public void setUp() throws Exception {
         driver = new ChromeDriver();
