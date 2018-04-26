@@ -15,7 +15,7 @@ import static org.testng.Assert.*;
 public class SmartbuyApplicationTest {
 
     private WebDriver driver;
-    String appURL = "http://localhost:8082/login";
+    String appURL = "http://172.17.0.3:8082/login";
 
     @BeforeMethod
     public void setUp() throws Exception {
