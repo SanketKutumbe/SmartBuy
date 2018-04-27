@@ -106,7 +106,7 @@
     <div class="col"></div>
 
     <div class="col-sm-4" th:each="product:${products}">
-        <div class="media"> <img class="media__image" src="images/bike.png" alt="" />
+        <div class="media"> <img class="media__image" th:src="@{${'images/'+{product.category}+'.png'}}" alt="" />
         <div class="media__body">
 
             <h2 th:text="${product.category}">Title</h2>
