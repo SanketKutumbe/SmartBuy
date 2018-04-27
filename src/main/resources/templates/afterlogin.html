@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <title>Smart Buy</title>
     <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css?version=2}" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
 
@@ -102,86 +102,26 @@
 
 
 <div class="block" th:fragment="header">
-    <section class="container">
-        <div class="row white" th:each="product:${products}">
-                <div class="media"> <img class="media__image" src="images/bike.png" alt="" />
-                <div class="media__body">
 
-                    <h2 th:text="${product.category}">Title</h2>
-                    <div th:inline="text">Price: [[${product.charge}]]/hour $</div>
-                    <!--<div class="form-group">-->
-                        <!--<label for="two_wg_hours" class="sr-only">Hours</label>-->
-                        <!--<input type="text" class="form-control">-->
-                    <!--</div>-->
+    <div class="col"></div>
+
+    <div class="col-sm-4" th:each="product:${products}">
+        <div class="media"> <img class="media__image" src="images/bike.png" alt="" />
+        <div class="media__body">
+
+            <h2 th:text="${product.category}">Title</h2>
+            <div th:inline="text">Price: [[${product.charge}]]/hour $</div>
+                        <!--<div class="form-group">-->
+                            <!--<label for="two_wg_hours" class="sr-only">Hours</label>-->
+                            <!--<input type="text" class="form-control">-->
+                        <!--</div>-->
 
 
-                    <!--<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>-->
-                </div>
-
+                        <!--<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>-->
             </div>
-
-    <!--</div>-->
         </div>
-    </section>
-    <!--<div class="media"> <img class="media__image" src="images/car.png" alt="" />-->
-        <!--<div class="media__body">-->
-            <!--<h2>Cool Title</h2>-->
-            <!--&lt;!&ndash;<p>Something cool</p>&ndash;&gt;-->
-            <!--&lt;!&ndash;<big><div th:text="${product.category}">Description</div></big>&ndash;&gt;-->
-            <!--<big>Rs. 200/hour</big>-->
-
-            <!--<div class="form-group">-->
-                <!--<label for="two_wg_hours" class="sr-only">Hours</label>-->
-                <!--<input type="text" class="form-control" id="two_wg_hours" placeholder="enter number of hours">-->
-            <!--</div>-->
-
-
-            <!--&lt;!&ndash;<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="media"> <img class="media__image" src="images/bicycle.png" alt="" />-->
-        <!--<div class="media__body">-->
-            <!--<h2>Cool Title</h2>-->
-            <!--&lt;!&ndash;<p>Something cool</p>&ndash;&gt;-->
-            <!--&lt;!&ndash;<big><div th:text="${product.category}">Description</div></big>&ndash;&gt;-->
-            <!--<big>Rs. 200/hour</big>-->
-
-            <!--<div class="form-group">-->
-                <!--<label for="two_wg_hours" class="sr-only">Hours</label>-->
-                <!--<input type="text" class="form-control" id=>-->
-            <!--</div>-->
-
-
-            <!--&lt;!&ndash;<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>&ndash;&gt;-->
-        <!--</div>-->
-    <!--</div>-->
 </div>
-                        <!--&lt;!&ndash;<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>&ndash;&gt;-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<div class="col-xs-12 col-sm-6 col-md-3" th:each="product : ${products}">-->
-                    <!--<ul class="pricing p-green">-->
-                        <!--<li>-->
-                            <!--<big><div th:text="${product.category}">Description</div></big>-->
-                        <!--</li>-->
-                        <!--<li><big>Rs. 200/hour</big></li>-->
-                        <!--<li>-->
-                            <!--<div class="form-group">-->
-                                <!--<label for="two_wg_hours" class="sr-only">Hours</label>-->
-                                <!--<input type="text" class="form-control" id="two_wg_hours" placeholder="enter number of hours">-->
-                            <!--</div>-->
-                        <!--</li>-->
-                        <!--<li>-->
-                            <!--<big><div><div th:inline="text">Price: [[${product.charge}]] Rs</div></div></big>-->
-                        <!--</li>-->
-                    <!--</ul>-->
-                <!--</div>-->
-
-
-
-
-            <!-- /block -->
-        <!-- /row -->
+</div>
 
 </body>
 </html>
