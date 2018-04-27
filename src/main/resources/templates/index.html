@@ -13,23 +13,125 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/afterlogin.css?version=3}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slideshow.css?version=3}" />
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css">
     <style>
         body {
             background: whitesmoke;
         }
     </style>
+    <style>
+
+        *,*:after,*:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .media {
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+        }
+
+        .media__image { display: block; }
+
+        .media__body {
+            background: rgba(41, 128, 185, 0.7);
+            bottom: 0;
+            color: white;
+            font-size: 1em;
+            left: 0;
+            opacity: 0;
+            overflow: hidden;
+            padding: 3.75em 3em;
+            position: absolute;
+            text-align: center;
+            top: 0;
+            right: 0;
+            -webkit-transition: 0.6s;
+            transition: 0.6s;
+        }
+
+        .media__body:hover { opacity: 1; pointer-events:all; }
+
+
+        .media__body:after, .media__body:before {
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            bottom: 1em;
+            content: '';
+            pointer-events:none;
+            left: 1em;
+            opacity: 0;
+            position: absolute;
+            right: 1em;
+            top: 1em;
+            -webkit-transform: scale(1.5);
+            -ms-transform: scale(1.5);
+            transform: scale(1.5);
+            -webkit-transition: 0.6s 0.2s;
+            transition: 0.6s 0.2s;
+        }
+
+        .media__body:before {
+            border-bottom: none;
+            border-top: none;
+            left: 2em;
+            right: 2em;
+        }
+
+        .media__body:after {
+            border-left: none;
+            border-right: none;
+            bottom: 2em;
+            top: 2em;
+        }
+
+        .media__body:hover:after, .media__body:hover:before {
+            -webkit-transform: scale(1);
+            -ms-transform: scale(1);
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .media__body h2 { margin-top: 0; }
+
+        .media__body p { margin-bottom: 1.5em; }
+
+        .media:nth-child(2) .media__body { background: rgba(146, 41, 185, 0.7); }
+
+        .media:nth-child(3) .media__body { background: rgba(185, 41, 128, 0.7); }
+
+        .media:nth-child(4) .media__body { background: rgba(185, 50, 41, 0.7); }
+
+        .media:nth-child(5) .media__body { background: rgba(185, 146, 41, 0.7); }
+
+        .media:nth-child(6) .media__body { background: rgba(128, 185, 41, 0.7); }
+    </style>
 
 </head>
 <body>
+
+    <ul class="cb-slideshow">
+        <li><span>Image 01</span><div><h3></h3></div></li>
+        <li><span>Image 02</span><div><h3></h3></div></li>
+        <li><span>Image 03</span><div><h3></h3></div></li>
+        <li><span>Image 04</span><div><h3></h3></div></li>
+        <li><span>Image 05</span><div><h3></h3></div></li>
+        <li><span>Image 06</span><div><h3></h3></div></li>
+    </ul>
     <header th:replace = "header :: header"></header>
+
     <div th:if="${param.logout}">
         <div class="alert alert-info">
             You have been logged out
         </div>
     </div>
+
     <div th:replace = "afterlogin :: header"></div>
+
+
 
 </body>
 

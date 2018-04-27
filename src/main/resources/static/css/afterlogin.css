@@ -3,6 +3,7 @@
 body {
     /*background: #111d27;*/
     /*color: #111;*/
+    background: #000;
     min-width: 320px;
     font-size: 16px;
     font-weight: 300;
@@ -10,8 +11,34 @@ body {
     -webkit-font-smoothing: antialiased;
     -webkit-backface-visibility: hidden;
     position: relative;
-    padding: 50px 20px;
+
+    /*padding: 50px 20px;*/
 }
+
+/*Added code by Sanket*/
+.container-fluid {
+    padding-right: 2px;
+    padding-left: 2px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.nav {
+    padding-right: 20px;
+    padding-left: 10px;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 40px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+/*Added code end*/
 
 .pricing {
     text-align: center;
